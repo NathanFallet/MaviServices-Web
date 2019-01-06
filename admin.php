@@ -58,6 +58,7 @@ if($page != 'login'){
 				<ul class="nav navbar-nav">
 					<li><a href="'.$url.'admin">Accueil</a></li>
 					<li><a href="'.$url.'admin/pages">Pages</a></li>
+					<li><a href="'.$url.'admin/menu">Menu</a></li>
 					<li><a href="'.$url.'admin/images">Images</a></li>
 					<li><a href="'.$url.'admin/shop">Boutique</a></li>
 				</ul>
