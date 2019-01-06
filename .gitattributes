@@ -1,0 +1,3 @@
+config.php merge=ours
+uploads/ merge=ours
+footer.json merge=ours
