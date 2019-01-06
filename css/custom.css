@@ -1,0 +1,103 @@
+.navbar-wrapper{
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 20;
+}
+
+.navbar-wrapper .container{
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.navbar-wrapper .navbar{
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.accent{
+	text-decoration: bold;
+	display: inline;
+}
+
+.navbar-default, header, footer, .dropdown-menu{
+	background-color: #023467 !important;
+	color: #FFF;
+}
+
+.navbar-collapse{
+	padding: 0px;
+}
+
+header{
+	padding: 0px !important;
+}
+
+footer{
+	padding: 20px 0px;
+}
+
+header a, footer a{
+	color: white !important;
+}
+
+header li:hover, header a:hover{
+	background-color: #2C75FF !important;
+}
+
+.shop-cat-ul{
+	width: 90%;
+	margin-left: 10%;
+	margin-top: 4px;
+}
+
+body{
+	color: #15A;
+	font-family: 'Comic sans MS';
+	font-size: 160%;
+}
+
+a{
+	color: #1CF;
+}
+
+a:hover{
+	color: #1CF;
+	text-decoration: underline;
+}
+
+.page-header {
+	border-bottom: 1px solid #15A;
+}
+
+ul.nav-pills li a, a[aria-expanded="true"]{
+	background-color: #023467 !important;
+	color: white !important;
+}
+
+textarea{
+	min-width: 100%;
+	max-width: 100%;
+}
+
+.logo{
+	max-width: 100%;
+}
+
+.pub{
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	max-width: 100%;
+	text-align: center;
+}
+
+.container{
+	background-color: white;
+}
+
+.no-background{
+	background: none !important;
+}

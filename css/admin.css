@@ -1,0 +1,81 @@
+.navbar-wrapper{
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 20;
+}
+
+.navbar-wrapper .container{
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.navbar-wrapper .navbar{
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.accent{
+	text-decoration: bold;
+	display: inline;
+}
+
+.navbar-default, .dropdown-menu{
+    background-color: #333;
+    color: #FFF;
+}
+
+.navbar-default a{
+    color: inherit !important;
+}
+
+.navbar li:hover, .dropdown-menu>li>a:hover, .navbar-nav>.open>a{
+    background-color: #000 !important;
+}
+
+.shop-cat-ul{
+	width: 90%;
+	margin-left: 10%;
+	margin-top: 4px;
+}
+
+body{
+    color: #333;
+    font-family: 'Comic sans MS';
+    font-size: 160%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+a{
+    color: #333;
+}
+
+a:hover{
+    color: #000;
+    text-decoration: underline;
+}
+
+.page-header {
+    border-bottom: 1px solid #333;
+}
+
+ul.nav-pills li a{
+	background-color: #eee;
+	color: #333;
+}
+
+ul.nav-pills li.active a, ul.nav-pills li a:hover, ul.nav-pills li a:focus{
+	background-color: #333 !important;
+	color: #FFF;
+}
+
+textarea{
+	min-width: 100%;
+	max-width: 100%;
+}
+
+table{
+	max-width: 100%;
+}
