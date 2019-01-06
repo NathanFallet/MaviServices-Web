@@ -1,3 +1,7 @@
+html, body {
+	height: 100%;
+}
+
 .navbar-wrapper{
 	position: absolute;
 	top: 0;
@@ -21,7 +25,7 @@
 	display: inline;
 }
 
-.navbar-default, header, footer, .dropdown-menu{
+.navbar-default, .header, .footer, .dropdown-menu{
 	background-color: #023467 !important;
 	color: #FFF;
 }
@@ -30,19 +34,19 @@
 	padding: 0px;
 }
 
-header{
+.header{
 	padding: 0px !important;
 }
 
-footer{
+.footer{
 	padding: 20px 0px;
 }
 
-header a, footer a{
+.header a, .footer a{
 	color: white !important;
 }
 
-header li:hover, header a:hover{
+.header li:hover, header a:hover{
 	background-color: #2C75FF !important;
 }
 
@@ -54,7 +58,6 @@ header li:hover, header a:hover{
 
 body{
 	color: #15A;
-	font-family: 'Comic sans MS';
 	font-size: 160%;
 }
 
@@ -100,4 +103,16 @@ textarea{
 
 .no-background{
 	background: none !important;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -200px;
+}
+
+.footer, .push {
+    margin: 0;
+    height: 200px;
 }

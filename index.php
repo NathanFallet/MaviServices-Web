@@ -60,7 +60,8 @@ echo '</title>
 	</style>
 </head>
 <body>
-<header>
+<div class="wrapper">
+<div class="header">
 	<div class="container no-background">
 		<img src="'.$logo.'" class="logo hidden-xs">
 		<div class="visible-xs">
@@ -85,7 +86,7 @@ echo '</title>
 			echo '</ul>
 		</div>
 	</div>
-</header>';
+</div>';
 
 // Affichage de la vue
 require_once('views/'.$page.'.php');
@@ -99,17 +100,19 @@ if($pub){
 	</div>';
 }
 echo '<div class="container"><br/></div>
-<footer>
+<div class="push"></div>
+</div>
+<div class="footer">
 	<div class="container no-background">
 		<div class="row">
 			<div class="col-md-3">
-				<h4>Title</h4><br/>
-				<a href="#">A link</a><br/>
-				<a href="#">Another link</a>
+				<h4>)</h4><br/>
+				<a href="#">-</a><br/>
+				<a href="#">-</a>
 			</div>
 		</div>
 	</div>
-</footer>
+</div>
 <script src="https://code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
 </body>
