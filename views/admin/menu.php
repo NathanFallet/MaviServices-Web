@@ -16,6 +16,7 @@ if(isset($message)){
 						<thead>
 							<tr>
 								<th>Titre</th>
+								<th>Parent</th>
 								<th>Lien</th>
 								<th>Action</th>
 							</tr>
@@ -24,8 +25,12 @@ if(isset($message)){
 <?php
 $sql = $bdd->query("SELECT * FROM menu ORDER BY id");
 while($dn = $sql->fetch()){
+	$sql2 = $bdd->prepare("SELECT * FROM menu WHERE id = ?");
+	$sql2->execute(array($dn['parent']));
+	$dn2 = $sql2->fetch();
 	echo '<tr>
 		<td>'.$dn['label'].'</td>
+		<td>'.($dn2 != null ? $dn2['label'] : 'Aucun').'</td>
 		<td>'.$dn['link'].'</td>
 		<td>
 			<a href="'.$url.'pages/'.$dn['id'].'"><span class="glyphicon glyphicon-eye-open"></span></a>
@@ -46,6 +51,18 @@ while($dn = $sql->fetch()){
 							<input type="text" class="form-control" name="label" id="label">
 						</div>
 						<div class="form-group">
+							<label for="parent">Parent :</label>
+							<select class="form-control" name="parent" id="parent">
+								<option value="0">Aucun</option>
+<?php
+$sql = $bdd->query("SELECT * FROM menu ORDER BY parent");
+while($dn = $sql->fetch()){
+	echo '<option value="'.$dn['id'].'">'.$dn['label'].'</option>';
+}
+?>
+							</select>
+						</div>
+						<div class="form-group">
 							<label for="link">Lien :</label>
 							<input type="text" class="form-control" name="link" id="link">
 						</div>
@@ -63,6 +80,18 @@ while($dn = $sql->fetch()){
 		<div class="form-group">
 			<label for="label">Titre :</label>
 			<input type="text" class="form-control" name="label" id="label" value="'.$dn['label'].'">
+		</div>
+		<div class="form-group">
+			<label for="parent">Parent :</label>
+			<select class="form-control" name="parent" id="parent">
+				<option value="0">Aucun</option>';
+$sql2 = $bdd->query("SELECT * FROM menu ORDER BY parent");
+while($dn2 = $sql2->fetch()){
+	if($dn['id'] != $dn2['id']){
+		echo '<option value="'.$dn2['id'].'"'.($dn['parent'] == $dn2['id'] ? ' selected' : '').'>'.$dn2['label'].'</option>';
+	}
+}
+			echo '</select>
 		</div>
 		<div class="form-group">
 			<label for="link">Lien :</label>
