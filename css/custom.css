@@ -46,7 +46,7 @@ html, body {
 	color: white !important;
 }
 
-.header li:hover, header a:hover{
+.header li:hover, .header a:hover{
 	background-color: #2C75FF !important;
 }
 

@@ -22,10 +22,20 @@ $background = $background['value'];
 require_once('models/'.$page.'.php');
 
 function displayMenu($parent, $bdd){
-	$sql = $bdd->prepare("SELECT * FROM menu WHERE parent = ?");
+	$sql = $bdd->prepare("SELECT *, (SELECT COUNT(*) FROM menu as under WHERE under.parent = menu.id) as under FROM menu WHERE parent = ?");
 	$sql->execute(array($parent));
 	while($dn = $sql->fetch()){
-		echo '<li><a href="'.$dn['link'].'">'.$dn['label'].'</a></li>';
+		if($dn['under'] > 0) {
+			echo '<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">'.$dn['label'].'
+				<span class="caret"></span></a>
+				<ul class="dropdown-menu">';
+					displayMenu($dn['id'], $bdd);
+				echo '</ul>
+			</li>';
+		}else{
+			echo '<li><a href="'.$dn['link'].'">'.$dn['label'].'</a></li>';
+		}
 	}
 }
 
@@ -75,13 +85,6 @@ echo '</title>
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">';
-				/*<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Test
-					<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a>Test1</a></li>
-					</ul>
-				</li>*/
 			displayMenu(0, $bdd);
 			echo '</ul>
 		</div>
