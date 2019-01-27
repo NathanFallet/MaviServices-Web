@@ -98,13 +98,6 @@ echo '</title>
 require_once('views/'.$page.'.php');
 
 // Footer de la page
-$sql = $bdd->query("SELECT * FROM pub ORDER BY rand() LIMIT 1");
-$pub = $sql->fetch();
-if($pub){
-	echo '<div class="pub">
-		<a href="'.$pub['link'].'">'.$pub['content'].'</a>
-	</div>';
-}
 echo '<div class="container"><br/></div>
 <div class="push"></div>
 </div>
