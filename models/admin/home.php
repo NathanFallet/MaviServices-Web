@@ -34,5 +34,12 @@ if(isset($_POST['main_page'])){
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 		L\'arrière plan du site a bien été modifié !
 	</div>';
+}else if(isset($_POST['footer'])){
+	$sql = $bdd->prepare("UPDATE vars SET value = ? WHERE name = 'footer'");
+	$sql->execute(array($_POST['value']));
+	$message = '<div class="alert alert-success fade in">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		Le footer du site a bien été modifié !
+	</div>';
 }
 ?>

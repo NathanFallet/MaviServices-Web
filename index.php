@@ -17,6 +17,9 @@ $logo = $logo['value'];
 $sql = $bdd->query("SELECT * FROM vars WHERE name = 'background'");
 $background = $sql->fetch();
 $background = $background['value'];
+$sql = $bdd->query("SELECT * FROM vars WHERE name = 'footer'");
+$footer = $sql->fetch();
+$footer = $footer['value'];
 
 // Traitement de la page
 require_once('models/'.$page.'.php');
@@ -106,15 +109,7 @@ echo '<div class="container"><br/></div>
 <div class="push"></div>
 </div>
 <div class="footer">
-	<div class="container no-background">
-		<div class="row">
-			<div class="col-md-3">
-				<h4>)</h4><br/>
-				<a href="#">-</a><br/>
-				<a href="#">-</a>
-			</div>
-		</div>
-	</div>
+	<div class="container no-background">'.$footer.'</div>
 </div>
 <script src="https://code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>

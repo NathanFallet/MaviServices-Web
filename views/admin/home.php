@@ -89,4 +89,23 @@ if(!$background){
 			<input type="submit" class="btn btn-primary" name="background" value="Modifier">
 		</div>
 	</form>
+	<form method="post">
+		<div class="form-group">
+			<label for="footer">Footer :</label>
+<?php
+$sql = $bdd->query("SELECT * FROM vars WHERE name = 'footer'");
+$footer = $sql->fetch();
+if(!$footer){
+	$footer = '';
+}else{
+	$footer = $footer['value'];
+}
+?>
+			<textarea rows="7" class="form-control" name="value" id="footer"><?php echo str_replace("\\\"", "\"", str_replace("\\'", "'", $footer)); ?></textarea>
+			<script type="text/javascript">CKEDITOR.replace('footer');</script>
+		</div>
+		<div class="form-group">
+			<input type="submit" class="btn btn-primary" name="footer" value="Modifier">
+		</div>
+	</form>
 </div>
